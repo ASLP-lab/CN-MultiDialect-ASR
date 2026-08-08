@@ -5,8 +5,9 @@
 <div align="center">
 
 [![Paper](https://img.shields.io/badge/Paper-Arxiv%20Link-blue)](#)
-[![Model](https://img.shields.io/badge/Model-Weights%20(TBD)-orange)](#)
-[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Coming%20Soon-yellow)](#)
+[![Model](https://img.shields.io/badge/Model-ASLP--lab%2FMultiDialect--ASR-orange)](https://huggingface.co/ASLP-lab/MultiDialect-ASR/)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-ASLP--lab%2FMultiDialect--ASR-yellow)](https://huggingface.co/ASLP-lab/MultiDialect-ASR/)
+[![License](https://img.shields.io/badge/License-Apache%202.0-green)](https://huggingface.co/ASLP-lab/MultiDialect-ASR/)
 
 </div>
 
@@ -27,7 +28,7 @@ This repository studies how to adapt a capable ASR model for multi-dialect recog
 
 OPSD addresses the train–test mismatch in autoregressive ASR by training the student on its own decoded prefixes, while a frozen teacher, conditioned on the reference transcript as privileged context, provides soft token-level targets. Under matched refinement data and schedule, OPSD improves dialect recognition without raising Mandarin CER, whereas continued teacher-forced fine-tuning increases Mandarin CER.
 
-We instantiate the framework with Qwen3-ASR-1.7B and evaluate it on public and internal Mandarin and dialect test sets. Model weights and evaluation scripts will be released.
+We instantiate the framework with Qwen3-ASR-1.7B and evaluate it on public and internal Mandarin and dialect test sets. Model weights are available at [ASLP-lab/MultiDialect-ASR](https://huggingface.co/ASLP-lab/MultiDialect-ASR/).
 
 ## Key Features
 
@@ -55,6 +56,21 @@ For faster inference with the vLLM backend:
 pip install -U qwen-asr[vllm]
 ```
 
+### Model Download
+
+You can load the model directly from Hugging Face, or download it locally first:
+
+```bash
+# Hugging Face
+pip install -U "huggingface_hub[cli]"
+huggingface-cli download ASLP-lab/MultiDialect-ASR --local-dir ./MultiDialect-ASR
+
+# ModelScope (recommended for users in Mainland China)
+pip install -U modelscope
+modelscope download --model ASLP-lab/MultiDialect-ASR --local_dir ./MultiDialect-ASR
+```
+
+Model card: [https://huggingface.co/ASLP-lab/MultiDialect-ASR/](https://huggingface.co/ASLP-lab/MultiDialect-ASR/)
 
 ### Python Inference
 
@@ -65,7 +81,7 @@ import torch
 from qwen_asr import Qwen3ASRModel
 
 model = Qwen3ASRModel.from_pretrained(
-    "./MultiDialect-ASR-OPSD",  # or the released Hugging Face / ModelScope model id
+    "ASLP-lab/MultiDialect-ASR",  # or "./MultiDialect-ASR" for a local path
     dtype=torch.bfloat16,
     device_map="cuda:0",
     # attn_implementation="flash_attention_2",
@@ -246,4 +262,4 @@ If you use this work, please consider citing:
 
 ## License
 
-License information will be added together with the public release of model weights and evaluation scripts.
+The released model is licensed under [Apache 2.0](https://huggingface.co/ASLP-lab/MultiDialect-ASR/).
