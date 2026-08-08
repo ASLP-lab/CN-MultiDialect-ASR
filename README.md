@@ -33,11 +33,9 @@ We instantiate the framework with Qwen3-ASR-1.7B and evaluate it on public and i
 
 ## Key Features
 
-* **Mandarin–dialect balanced adaptation**: improves Chinese dialect ASR while retaining or improving Mandarin recognition.
-* **Three-stage pipeline**: CPT builds the foundation, dialect SFT specializes the model, and OPSD refines the final checkpoint.
-* **On-Policy Self-Distillation**: trains under student-decoded prefixes with soft teacher targets, reducing the train–test mismatch of teacher-forced ASR training.
-* **Strong empirical trade-off**: relative to Continued SFT on the same refinement data, OPSD lowers Mandarin, Dialect, Internal, and Overall CER.
-* **Compatible with Qwen3-ASR inference**: released checkpoints follow the same usage interface as Qwen3-ASR via the `qwen-asr` package.
+* **Mandarin–dialect balanced adaptation**: improves Chinese dialect ASR while retaining Mandarin recognition.
+* **Three-stage pipeline**: CPT strengthens the Chinese ASR foundation, dialect SFT specializes for dialects, and OPSD refines the final checkpoint.
+* **On-Policy Self-Distillation**: trains on student-decoded prefixes with soft teacher targets, reducing the train–test mismatch of teacher-forced ASR training.
 
 ## Demo
 
