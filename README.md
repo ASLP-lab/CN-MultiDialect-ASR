@@ -48,7 +48,6 @@ Interactive page with audio players and model transcriptions for Cantonese, Minn
 Files are in [`demo/`](demo/).
 
 ## Quickstart
-## Quickstart
 
 Inference is compatible with [Qwen3-ASR](https://github.com/QwenLM/Qwen3-ASR). We recommend installing the official `qwen-asr` package in a clean environment.
 
