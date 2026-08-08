@@ -5,7 +5,7 @@
 <div align="center">
 
 [![Paper](https://img.shields.io/badge/Paper-Arxiv%20Link-blue)](#)
-[![Demo](https://img.shields.io/badge/Demo-Listen%20Online-brightgreen)](demo/README.md)
+[![Demo](https://img.shields.io/badge/Demo-Listen%20Online-brightgreen)](https://htmlpreview.github.io/?https://github.com/ASLP-lab/MultiDialect-ASR/blob/main/demo/index.html)
 [![Model](https://img.shields.io/badge/Model-ASLP--lab%2FMultiDialect--ASR-orange)](https://huggingface.co/ASLP-lab/MultiDialect-ASR/)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-ASLP--lab%2FMultiDialect--ASR-yellow)](https://huggingface.co/ASLP-lab/MultiDialect-ASR/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green)](https://huggingface.co/ASLP-lab/MultiDialect-ASR/)
@@ -41,15 +41,13 @@ We instantiate the framework with Qwen3-ASR-1.7B and evaluate it on public and i
 
 ## Demo
 
-Listen to dialect recognition examples here:
+**[Listen Online](https://htmlpreview.github.io/?https://github.com/ASLP-lab/MultiDialect-ASR/blob/main/demo/index.html)**
 
-**[Open Demo](demo/README.md)**
+Interactive page with audio players and model transcriptions for Cantonese, Minnan, Sichuan, and Wu.
 
-- Markdown showcase: [`demo/README.md`](demo/README.md)
-- Interactive page (inline players): [htmlpreview link](https://htmlpreview.github.io/?https://github.com/ASLP-lab/MultiDialect-ASR/blob/main/demo/index.html)
+Files are in [`demo/`](demo/).
 
-The demo covers Cantonese, Minnan, Sichuan, and Wu (5 samples each).
-
+## Quickstart
 ## Quickstart
 
 Inference is compatible with [Qwen3-ASR](https://github.com/QwenLM/Qwen3-ASR). We recommend installing the official `qwen-asr` package in a clean environment.
