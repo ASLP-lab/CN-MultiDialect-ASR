@@ -99,7 +99,6 @@ We report four macro-averaged CER metrics:
 - `Overall Avg.`: macro-average over all 31 test sets.
 
 
-
 #### Mandarin test sets
 
 `AISHELL-1`, `AISHELL-2`, `KeSpeech`, `SpeechIO-1`, `SpeechIO-2`, `SpeechIO-3`, `WenetSpeech Test_Meeting`, `WenetSpeech Test_Net`
@@ -111,17 +110,6 @@ We report four macro-averaged CER metrics:
 #### Internal dialect test sets
 
 `Anhui`, `Cantonese`, `Changsha`, `Chaoshan`, `Dongbei`, `Henan`, `Kejia`, `Minnan`, `Nanchang`, `Nanjing`, `Shanxi`, `Shaanxi`, `Shandong`, `Shanghai`, `Sichuan`, `Suzhou`, `Wuhan`, `Xuzhou`
-
-### Implementation Details
-
-- Base model: `Qwen3-ASR-1.7B`
-- Hardware: `8 x NVIDIA RTX A6000`
-- Training stack: `DeepSpeed ZeRO-2` and `FlashAttention-2`
-- `CPT`: 1 epoch, learning rate `1e-5`, global batch size `1536`
-- `SFT`: 1 epoch, learning rate `1e-5`, global batch size `1536`
-- `OPSD`: 1 epoch on the `~5k`-hour refinement set, learning rate `1e-4`, global batch size `512`
-- OPSD rollout temperature: `tau = 0.8`
-- Evaluation: shared greedy decoding for all reported checkpoints
 
 
 
