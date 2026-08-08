@@ -5,6 +5,7 @@
 <div align="center">
 
 [![Paper](https://img.shields.io/badge/Paper-Arxiv%20Link-blue)](#)
+[![Demo](https://img.shields.io/badge/Demo-Listen%20Online-brightgreen)](https://aslp-lab.github.io/MultiDialect-ASR/demo/)
 [![Model](https://img.shields.io/badge/Model-ASLP--lab%2FMultiDialect--ASR-orange)](https://huggingface.co/ASLP-lab/MultiDialect-ASR/)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-ASLP--lab%2FMultiDialect--ASR-yellow)](https://huggingface.co/ASLP-lab/MultiDialect-ASR/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green)](https://huggingface.co/ASLP-lab/MultiDialect-ASR/)
@@ -37,6 +38,24 @@ We instantiate the framework with Qwen3-ASR-1.7B and evaluate it on public and i
 * **On-Policy Self-Distillation**: trains under student-decoded prefixes with soft teacher targets, reducing the train–test mismatch of teacher-forced ASR training.
 * **Strong empirical trade-off**: relative to Continued SFT on the same refinement data, OPSD lowers Mandarin, Dialect, Internal, and Overall CER.
 * **Compatible with Qwen3-ASR inference**: released checkpoints follow the same usage interface as Qwen3-ASR via the `qwen-asr` package.
+
+## Demo
+
+Listen to dialect recognition examples online:
+
+**[Open Demo](https://aslp-lab.github.io/MultiDialect-ASR/demo/)**
+
+The page covers Cantonese, Minnan, Sichuan, and Wu. Each dialect includes 5 audio samples with model transcriptions.
+
+Local preview:
+
+```bash
+python3 -m http.server 8766 --directory demo
+```
+
+Then open `http://127.0.0.1:8766/`.
+
+> After pushing to GitHub, enable **Settings → Pages → Deploy from branch `main` / root** (or `/docs`) so the online demo link works.
 
 ## Quickstart
 
