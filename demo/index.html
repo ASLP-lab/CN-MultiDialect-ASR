@@ -7,16 +7,12 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>CN-MultiDialect-ASR Demo</h1>
-    <p>Cantonese · Minnan · Sichuan · Wu</p>
-  </header>
-
-  <main>
-    <nav id="filters" class="filters" aria-label="方言筛选"></nav>
-    <section id="dialect-list"></section>
+  <main class="video-page">
+    <video class="demo-video" controls preload="metadata" playsinline aria-label="CN-MultiDialect-ASR video demo">
+      <source src="demo_video.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+      <a href="demo_video.mp4">Download the demo video</a>.
+    </video>
   </main>
-
-  <script src="app.js"></script>
 </body>
 </html>

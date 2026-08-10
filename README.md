@@ -5,7 +5,7 @@
 <div align="center">
 
 [![Paper](https://img.shields.io/badge/Paper-Arxiv%20Link-blue)](#)
-[![Demo](https://img.shields.io/badge/Demo-Listen%20Online-brightgreen)](https://htmlpreview.github.io/?https://github.com/ASLP-lab/MultiDialect-ASR/blob/main/demo/index.html)
+[![Demo](https://img.shields.io/badge/Demo-Watch%20Online-brightgreen)](https://htmlpreview.github.io/?https://github.com/ASLP-lab/CN-MultiDialect-ASR/blob/main/demo/index.html)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-ASLP--lab%2FCN--MultiDialect--ASR-yellow)](https://huggingface.co/ASLP-lab/CN-MultiDialect-ASR/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green)](https://huggingface.co/ASLP-lab/CN-MultiDialect-ASR/)
 
@@ -38,11 +38,10 @@ We instantiate the framework with Qwen3-ASR-1.7B and evaluate it on public and i
 
 ## Demo
 
-**[Listen Online](https://htmlpreview.github.io/?https://github.com/ASLP-lab/MultiDialect-ASR/blob/main/demo/index.html)**
+**[Watch Online](https://htmlpreview.github.io/?https://github.com/ASLP-lab/CN-MultiDialect-ASR/blob/main/demo/index.html)**
 
-Interactive page with audio players and model transcriptions for Cantonese, Minnan, Sichuan, and Wu.
+Video demo with live waveforms and model transcriptions for Cantonese, Minnan, Sichuan, and Wu.
 
-Files are in [`demo/`](demo/).
 
 ## Quickstart
 
