@@ -1,5 +1,7 @@
 
 
+https://github.com/user-attachments/assets/e6f1ac23-8273-4091-9adc-ba247af21efa
+
 # 🧠 On-Policy Self-Distillation for Multi-Dialect ASR: Mastering Dialects, Retaining Mandarin
 
 > Official repository of the paper "On-Policy Self-Distillation for Multi-Dialect ASR: Mastering Dialects, Retaining Mandarin".
