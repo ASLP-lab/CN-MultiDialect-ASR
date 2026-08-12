@@ -1,7 +1,3 @@
-
-
-https://github.com/user-attachments/assets/e6f1ac23-8273-4091-9adc-ba247af21efa
-
 # 🧠 On-Policy Self-Distillation for Multi-Dialect ASR: Mastering Dialects, Retaining Mandarin
 
 > Official repository of the paper "On-Policy Self-Distillation for Multi-Dialect ASR: Mastering Dialects, Retaining Mandarin".
@@ -44,9 +40,8 @@ We instantiate the framework with Qwen3-ASR-1.7B and evaluate it on public and i
 Video demo with live waveforms and model transcriptions for Mandarin, English,
 four core dialects, and 15 ChinaVoices dialects.
 
-<video src="https://raw.githubusercontent.com/ASLP-lab/CN-MultiDialect-ASR/main/demo/demo_video.mp4" controls preload="metadata" playsinline width="100%" aria-label="CN-MultiDialect-ASR video demo"></video>
+<video src="https://github.com/user-attachments/assets/e6f1ac23-8273-4091-9adc-ba247af21efa" controls preload="metadata" playsinline width="100%" aria-label="CN-MultiDialect-ASR video demo"></video>
 
-**[Open standalone demo page](https://htmlpreview.github.io/?https://github.com/ASLP-lab/CN-MultiDialect-ASR/blob/main/demo/index.html)**
 
 
 ## 🚀 Quickstart
