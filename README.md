@@ -41,7 +41,7 @@ Video demo with live waveforms and model transcriptions for Mandarin, English,
 four core dialects, and 15 ChinaVoices dialects.
 
 <video controls preload="metadata" playsinline width="100%" aria-label="CN-MultiDialect-ASR video demo">
-  <source src="./demo/demo_video.mp4" type="video/mp4">
+  <source src="https://raw.githubusercontent.com/ASLP-lab/CN-MultiDialect-ASR/main/demo/demo_video.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
 
