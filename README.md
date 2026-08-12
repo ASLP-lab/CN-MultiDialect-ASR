@@ -1,11 +1,10 @@
-# On-Policy Self-Distillation for Multi-Dialect ASR: Mastering Dialects, Retaining Mandarin
+# 🧠 On-Policy Self-Distillation for Multi-Dialect ASR: Mastering Dialects, Retaining Mandarin
 
 > Official repository of the paper "On-Policy Self-Distillation for Multi-Dialect ASR: Mastering Dialects, Retaining Mandarin".
 
 <div align="center">
 
 [![Paper](https://img.shields.io/badge/Paper-Arxiv%20Link-blue)](#)
-[![Demo](https://img.shields.io/badge/Demo-Watch%20Online-brightgreen)](https://htmlpreview.github.io/?https://github.com/ASLP-lab/CN-MultiDialect-ASR/blob/main/demo/index.html)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-ASLP--lab%2FCN--MultiDialect--ASR-yellow)](https://huggingface.co/ASLP-lab/CN-MultiDialect-ASR/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green)](https://huggingface.co/ASLP-lab/CN-MultiDialect-ASR/)
 
@@ -16,7 +15,7 @@
   <p><em>Overview of the staged adaptation pipeline. Top: base model, CPT, SFT, and OPSD. Bottom: OPSD with student on-policy prefixes, a frozen teacher conditioned on the reference transcript as privileged context, soft targets q<sub>t</sub>, and token-level KL.</em></p>
 </div>
 
-## Introduction
+## 📖 Introduction
 
 Large-scale ASR models such as Qwen3-ASR already achieve strong Mandarin recognition and have some ability to recognize Chinese dialects. In real-world speech, however, dialect recognition remains limited. Direct dialect fine-tuning can lower dialect CER, but it often raises Mandarin CER at the same time.
 
@@ -30,24 +29,30 @@ OPSD addresses the train–test mismatch in autoregressive ASR by training the s
 
 We instantiate the framework with Qwen3-ASR-1.7B and evaluate it on public and internal Mandarin and dialect test sets. Model weights are available at [ASLP-lab/CN-MultiDialect-ASR](https://huggingface.co/ASLP-lab/CN-MultiDialect-ASR/).
 
-## Key Features
+## ✨ Key Features
 
 * **Mandarin–dialect balanced adaptation**: improves Chinese dialect ASR while retaining Mandarin recognition.
 * **Three-stage pipeline**: CPT strengthens the Chinese ASR foundation, dialect SFT specializes for dialects, and OPSD refines the final checkpoint.
 * **On-Policy Self-Distillation**: trains on student-decoded prefixes with soft teacher targets, reducing the train–test mismatch of teacher-forced ASR training.
 
-## Demo
+## 🎬 Demo
 
-**[Watch Online](https://htmlpreview.github.io/?https://github.com/ASLP-lab/CN-MultiDialect-ASR/blob/main/demo/index.html)**
+Video demo with live waveforms and model transcriptions for Mandarin, English,
+four core dialects, and 15 ChinaVoices dialects.
 
-Video demo with live waveforms and model transcriptions for Cantonese, Minnan, Sichuan, and Wu.
+<video controls preload="metadata" playsinline width="100%" aria-label="CN-MultiDialect-ASR video demo">
+  <source src="./demo/demo_video.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+**[Open standalone demo page](https://htmlpreview.github.io/?https://github.com/ASLP-lab/CN-MultiDialect-ASR/blob/main/demo/index.html)**
 
 
-## Quickstart
+## 🚀 Quickstart
 
 Inference is compatible with [Qwen3-ASR](https://github.com/QwenLM/Qwen3-ASR). We recommend installing the official `qwen-asr` package in a clean environment.
 
-### Environment Setup
+### ⚙️ Environment Setup
 
 ```bash
 conda create -n qwen3-asr python=3.12 -y
@@ -61,7 +66,7 @@ For faster inference with the vLLM backend:
 pip install -U qwen-asr[vllm]
 ```
 
-### Model Download
+### 📦 Model Download
 
 You can load the model directly from Hugging Face, or download it locally first:
 
@@ -77,7 +82,7 @@ modelscope download --model ASLP-lab/CN-MultiDialect-ASR --local_dir ./CN-MultiD
 
 Model card: [https://huggingface.co/ASLP-lab/CN-MultiDialect-ASR/](https://huggingface.co/ASLP-lab/CN-MultiDialect-ASR/)
 
-### Python Inference
+### 🐍 Python Inference
 
 The usage is the same as Qwen3-ASR. Load the model with `Qwen3ASRModel.from_pretrained` and call `transcribe`:
 
@@ -120,7 +125,7 @@ for r in results:
 
 For more advanced usage, including vLLM backend, streaming inference, and forced alignment, please refer to the [Qwen3-ASR repository](https://github.com/QwenLM/Qwen3-ASR).
 
-## Method Overview
+## 🧩 Method Overview
 
 | Stage  | Training data                                                                | Goal                                                 | Objective      |
 | ------ | ---------------------------------------------------------------------------- | ---------------------------------------------------- | -------------- |
@@ -128,15 +133,15 @@ For more advanced usage, including vLLM backend, streaming inference, and forced
 | `SFT`  | Same sources with higher dialect sampling weight and a small Mandarin anchor | Lower dialect CER                                    | Cross-entropy  |
 | `OPSD` | Dialect refinement subset (`~5k` hours)                                      | Improve dialect recognition without hurting Mandarin | Token-level KL |
 
-### Stage 1: CPT
+### 1️⃣ Stage 1: CPT
 
 Starting from Qwen3-ASR-1.7B, we continually pre-train on a large Mandarin-dialect corpus that combines public Mandarin corpora, public dialect corpora, and internal Chinese speech. This stage strengthens the overall ASR foundation before dialect-focused adaptation.
 
-### Stage 2: SFT
+### 2️⃣ Stage 2: SFT
 
 Dialect SFT keeps the same training sources but changes the Mandarin-dialect sampling ratio. All dialect training data are retained, while only a small amount of Mandarin data is kept as an anchor. This stage improves dialect CER, but it can still raise Mandarin CER.
 
-### Stage 3: OPSD
+### 3️⃣ Stage 3: OPSD
 
 We apply OPSD to the SFT checkpoint as the final refinement objective.
 
@@ -146,34 +151,69 @@ We apply OPSD to the SFT checkpoint as the final refinement objective.
 
 At inference time, only the student pathway is used. Unlike continued teacher-forced fine-tuning, OPSD trains under decoding states closer to inference and avoids another hard one-hot update on dialect data.
 
-## Experimental Setup
+## 🧪 Experimental Setup
 
-### Evaluation Sets
+### 📊 Evaluation Sets
 
 We evaluate on three groups of test sets:
 
-#### Mandarin test sets
+#### 🀄 Mandarin test sets
 
 `AISHELL-1`, `AISHELL-2`, `KeSpeech`, `SpeechIO-1`, `SpeechIO-2`, `SpeechIO-3`, `WenetSpeech Test_Meeting`, `WenetSpeech Test_Net`
 
-#### Public dialect test sets
+#### 🌐 Public dialect test sets
 
 `WenetSpeech-Yue Long`, `WenetSpeech-Yue Short`, `WenetSpeech-Chuan Easy`, `WenetSpeech-Chuan Hard`, `WenetSpeech-Wu`
 
-#### Internal dialect test sets
+#### 🗣️ Internal dialect test sets
 
 `Anhui`, `Cantonese`, `Changsha`, `Chaoshan`, `Dongbei`, `Henan`, `Kejia`, `Minnan`, `Nanchang`, `Nanjing`, `Shanxi`, `Shaanxi`, `Shandong`, `Shanghai`, `Sichuan`, `Suzhou`, `Wuhan`, `Xuzhou`
 
-## Main Results
+## 📈 Main Results
 
-### Dialect Results (1 − CER)
+### 🧭 Dialect Results (1 − CER)
 
 <div align="center">
   <img src="assets/radar_1_cer_panels.png" alt="Side-by-side radar of 1-CER on public and internal dialect sets" width="92%">
-  <p><em>Higher is better. Left: 5 public dialect sets; right: 18 internal dialects. Each panel uses its own radial scale. <strong>CN-MultiDialect-ASR</strong> is the released OPSD checkpoint.</em></p>
+  <p><em>Higher is better. Left: 5 public dialect sets; right: 18 internal dialects. Each panel uses its own radial scale. The figure compares the Qwen3-ASR baseline with the released <strong>CN-MultiDialect-ASR</strong> (OPSD) checkpoint.</em></p>
 </div>
 
-### Mandarin CER (%)
+### 🌐 Public Dialect CER (%)
+
+| Evaluation set | Dialect | Qwen3-ASR | CN-MultiDialect-ASR |
+| -------------- | ------- | --------- | -------------------- |
+| WenetSpeech-Yue Long  | Cantonese | 9.99 | **8.80** |
+| WenetSpeech-Yue Short | Cantonese | 6.93 | **5.31** |
+| WenetSpeech-Chuan Easy | Sichuan | 12.38 | **11.86** |
+| WenetSpeech-Chuan Hard | Sichuan | 21.79 | **21.74** |
+| WenetSpeech-Wu | Wu | 25.74 | **16.26** |
+| **Dialect Avg.** |  | 15.37 | **12.79** |
+
+### 🗣️ Internal Dialect CER (%)
+
+| Dialect | Qwen3-ASR | CN-MultiDialect-ASR |
+| ------- | --------- | -------------------- |
+| Anhui | 18.95 | **13.08** |
+| Cantonese | 10.06 | **7.74** |
+| Changsha | 14.79 | **10.23** |
+| Chaoshan | 45.59 | **25.21** |
+| Dongbei | 6.45 | **5.80** |
+| Henan | 8.46 | **5.99** |
+| Kejia | 60.47 | **28.60** |
+| Minnan | 30.03 | **18.59** |
+| Nanchang | 33.41 | **15.58** |
+| Nanjing | 13.37 | **9.33** |
+| Shanxi | 28.53 | **18.69** |
+| Shaanxi | 9.68 | **6.28** |
+| Shandong | 8.78 | **7.64** |
+| Shanghai | 15.78 | 12.07 |
+| Sichuan | 5.99 | 5.38 |
+| Suzhou | 50.35 | **20.73** |
+| Wuhan | 11.30 | **7.59** |
+| Xuzhou | 6.12 | **5.04** |
+| **Internal Avg.** | 21.01 | **12.42** |
+
+### 🀄 Mandarin CER (%)
 
 | Evaluation set | Qwen3-ASR | CN-MultiDialect-ASR |
 | -------------- | --------- | ------------------- |
@@ -187,7 +227,19 @@ We evaluate on three groups of test sets:
 | Test_Net       | 5.46      | **5.30**            |
 | Mandarin Avg.  | 3.46      | **3.27**            |
 
-## Citation
+## 🙏 Acknowledgements
+
+This work builds upon the following open-source projects and datasets:
+
+* [WenetSpeech](https://github.com/wenet-e2e/wenetspeech) — Mandarin speech corpus
+* [WenetSpeech-Yue](https://github.com/ASLP-lab/WenetSpeech-Yue) — Cantonese speech dataset
+* [WenetSpeech-Wu](https://github.com/ASLP-lab/WenetSpeech-Wu-Repo) — Wu dialect speech dataset
+* [WenetSpeech-Chuan](https://github.com/ASLP-lab/WenetSpeech-Chuan) — Sichuanese speech dataset
+* [WEST](https://github.com/wenet-e2e/west) — Speech and language toolkit
+* [Qwen3-ASR](https://github.com/QwenLM/Qwen3-ASR) — Base ASR model
+* [ms-swift](https://github.com/modelscope/ms-swift) — Model training and fine-tuning toolkit
+
+## 📚 Citation
 
 If you use this work, please consider citing:
 
@@ -200,6 +252,6 @@ If you use this work, please consider citing:
 }
 ```
 
-## License
+## 📄 License
 
 The released model is licensed under [Apache 2.0](https://huggingface.co/ASLP-lab/CN-MultiDialect-ASR/).
