@@ -152,6 +152,16 @@ We apply OPSD to the SFT checkpoint as the final refinement objective.
 
 At inference time, only the student pathway is used. Unlike continued teacher-forced fine-tuning, OPSD trains under decoding states closer to inference and avoids another hard one-hot update on dialect data.
 
+## 🛠️ Training Code
+
+The data conversion utility, SFT launcher, OPSD launcher, and custom Swift plugin are available in [`code/`](code/). See the [training instructions](code/README.md) for the expected JSONL format and complete commands.
+
+```bash
+python code/convert_data.py --input raw.jsonl --output train.jsonl
+DATA=/path/to/train.jsonl MODEL=Qwen/Qwen3-ASR-1.7B bash code/sft.sh
+MODEL=/path/to/sft/checkpoint DATA=/path/to/train.jsonl bash code/opsd.sh
+```
+
 ## 🧪 Experimental Setup
 
 ### 📊 Evaluation Sets
@@ -176,7 +186,7 @@ We evaluate on three groups of test sets:
 
 <div align="center">
   <img src="assets/radar_1_cer_panels.png" alt="Side-by-side radar of 1-CER on public and internal dialect sets" width="92%">
-  <p><em>Higher is better. Left: 5 public dialect sets; right: 18 internal dialects. Each panel uses its own radial scale. The figure compares the Qwen3-ASR baseline with the released <strong>CN-MultiDialect-ASR</strong> (OPSD) checkpoint.</em></p>
+  <p><em>Higher is better. Left: 5 public dialect sets; right: 18 internal dialects. Both panels use the same radial scale (0.2–1.0) for direct visual comparison. The figure compares the Qwen3-ASR baseline with the released <strong>CN-MultiDialect-ASR</strong> (OPSD) checkpoint.</em></p>
 </div>
 
 ### 🌐 Public Dialect CER (%)
