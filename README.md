@@ -1,7 +1,4 @@
 
-
-https://github.com/user-attachments/assets/16a6e3dd-f6b1-4d6e-90fa-8a53ffb2cf15
-
 # 🧠 On-Policy Self-Distillation for Multi-Dialect ASR: Mastering Dialects, Retaining Mandarin
 
 
@@ -30,7 +27,7 @@ https://github.com/user-attachments/assets/16a6e3dd-f6b1-4d6e-90fa-8a53ffb2cf15
 Video demo with live waveforms and model transcriptions for Mandarin, English,
 four core dialects, and 15 ChinaVoices dialects.
 
-<video src="https://github.com/user-attachments/assets/e6f1ac23-8273-4091-9adc-ba247af21efa" controls preload="metadata" playsinline width="100%" aria-label="CN-MultiDialect-ASR video demo"></video>
+<video src="https://github.com/user-attachments/assets/16a6e3dd-f6b1-4d6e-90fa-8a53ffb2cf15" controls preload="metadata" playsinline width="100%" aria-label="CN-MultiDialect-ASR video demo"></video>
 
 ## 📖 Introduction
 
