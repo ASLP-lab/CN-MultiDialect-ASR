@@ -1,10 +1,16 @@
 # 🧠 On-Policy Self-Distillation for Multi-Dialect ASR: Mastering Dialects, Retaining Mandarin
 
-> Official repository of the paper "On-Policy Self-Distillation for Multi-Dialect ASR: Mastering Dialects, Retaining Mandarin".
+
+<div align="center">
+  <p><strong>Shuiyuan Wang<sup>1</sup> · Bingshen Mu<sup>1</sup> · Pengshen Zhang<sup>2</sup> · Chengyou Wang<sup>1</sup> · Yujie Liao<sup>1</sup> · Chengdong Liang<sup>2</sup> · Binbin Zhang<sup>2</sup> · Qiangze Feng<sup>3</sup> · Lei Xie<sup>1</sup></strong></p>
+  <p><sup>1</sup> Audio, Speech and Language Processing Group (ASLP@NPU), School of Computer Science, Northwestern Polytechnical University, Xi'an, China<br>
+  <sup>2</sup> WeNet Community<br>
+  <sup>3</sup> NEXDATA TECHNOLOGY INC.</p>
+</div>
 
 <div align="center">
 
-[![Paper](https://img.shields.io/badge/Paper-Arxiv%20Link-blue)](#)
+[![Paper](https://img.shields.io/badge/Paper-Arxiv%20Link-blue)](https://arxiv.org/abs/2608.11898)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-ASLP--lab%2FCN--MultiDialect--ASR-yellow)](https://huggingface.co/ASLP-lab/CN-MultiDialect-ASR/)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green)](https://huggingface.co/ASLP-lab/CN-MultiDialect-ASR/)
 
@@ -14,6 +20,13 @@
   <img src="assets/opsd.png" alt="OPSD framework" width="90%">
   <p><em>Overview of the staged adaptation pipeline. Top: base model, CPT, SFT, and OPSD. Bottom: OPSD with student on-policy prefixes, a frozen teacher conditioned on the reference transcript as privileged context, soft targets q<sub>t</sub>, and token-level KL.</em></p>
 </div>
+
+## 🎬 Demo
+
+Video demo with live waveforms and model transcriptions for Mandarin, English,
+four core dialects, and 15 ChinaVoices dialects.
+
+<video src="https://github.com/user-attachments/assets/e6f1ac23-8273-4091-9adc-ba247af21efa" controls preload="metadata" playsinline width="100%" aria-label="CN-MultiDialect-ASR video demo"></video>
 
 ## 📖 Introduction
 
@@ -34,15 +47,6 @@ We instantiate the framework with Qwen3-ASR-1.7B and evaluate it on public and i
 * **Mandarin–dialect balanced adaptation**: improves Chinese dialect ASR while retaining Mandarin recognition.
 * **Three-stage pipeline**: CPT strengthens the Chinese ASR foundation, dialect SFT specializes for dialects, and OPSD refines the final checkpoint.
 * **On-Policy Self-Distillation**: trains on student-decoded prefixes with soft teacher targets, reducing the train–test mismatch of teacher-forced ASR training.
-
-## 🎬 Demo
-
-Video demo with live waveforms and model transcriptions for Mandarin, English,
-four core dialects, and 15 ChinaVoices dialects.
-
-<video src="https://github.com/user-attachments/assets/e6f1ac23-8273-4091-9adc-ba247af21efa" controls preload="metadata" playsinline width="100%" aria-label="CN-MultiDialect-ASR video demo"></video>
-
-
 
 ## 🚀 Quickstart
 
@@ -240,11 +244,14 @@ This work builds upon the following open-source projects and datasets:
 If you use this work, please consider citing:
 
 ```bibtex
-@article{opsd2026,
+@misc{wang2026onpolicyselfdistillationmultidialectasr,
   title={On-Policy Self-Distillation for Multi-Dialect ASR: Mastering Dialects, Retaining Mandarin},
-  author={Anonymous Authors},
-  journal={Anonymous submission},
-  year={2026}
+  author={Shuiyuan Wang and Bingshen Mu and Pengshen Zhang and Chengyou Wang and Yujie Liao and Chengdong Liang and Binbin Zhang and Qiangze Feng and Lei Xie},
+  year={2026},
+  eprint={2608.11898},
+  archivePrefix={arXiv},
+  primaryClass={eess.AS},
+  url={https://arxiv.org/abs/2608.11898}
 }
 ```
 
