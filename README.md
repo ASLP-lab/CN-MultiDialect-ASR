@@ -242,6 +242,7 @@ We evaluate on three groups of test sets:
 
 This work builds upon the following open-source projects and datasets:
 
+* [ChinaVoices Challenge 2026](https://aslp-lab.github.io/ChinaVoices-Challenge/) — Chinese multi-dialect ASR challenge and evaluation platform
 * [WenetSpeech](https://github.com/wenet-e2e/wenetspeech) — Mandarin speech corpus
 * [WenetSpeech-Yue](https://github.com/ASLP-lab/WenetSpeech-Yue) — Cantonese speech dataset
 * [WenetSpeech-Wu](https://github.com/ASLP-lab/WenetSpeech-Wu-Repo) — Wu dialect speech dataset
