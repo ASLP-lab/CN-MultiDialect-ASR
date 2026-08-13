@@ -27,7 +27,7 @@
 Video demo with live waveforms and model transcriptions for Mandarin, English,
 four core dialects, and 15 ChinaVoices dialects.
 
-<video src="https://github.com/user-attachments/assets/f1857b21-3c6c-4e4b-92d1-ab6bd986568e" controls preload="metadata" playsinline width="100%" aria-label="CN-MultiDialect-ASR video demo"></video>
+<video src="https://github.com/user-attachments/assets/9e1d97ed-c116-40c8-b129-2ed481484536" controls preload="metadata" playsinline width="100%" aria-label="CN-MultiDialect-ASR video demo"></video>
 
 
 ## 📖 Introduction
