@@ -196,7 +196,7 @@ We evaluate on three groups of test sets:
 ### 🌐 Public Dialect CER (%)
 
 | Evaluation set | Dialect | Qwen3-ASR | CN-MultiDialect-ASR |
-| -------------- | ------- | --------- | -------------------- |
+|:--------------:|:-------:|:---------:|:--------------------:|
 | WenetSpeech-Yue Long  | Cantonese | 9.99 | **8.80** |
 | WenetSpeech-Yue Short | Cantonese | 6.93 | **5.31** |
 | WenetSpeech-Chuan Easy | Sichuan | 12.38 | **11.86** |
@@ -207,7 +207,7 @@ We evaluate on three groups of test sets:
 ### 🗣️ Internal Dialect CER (%)
 
 | Dialect | Qwen3-ASR | CN-MultiDialect-ASR |
-| ------- | --------- | -------------------- |
+|:-------:|:---------:|:--------------------:|
 | Anhui | 18.95 | **13.08** |
 | Cantonese | 10.06 | **7.74** |
 | Changsha | 14.79 | **10.23** |
@@ -231,7 +231,7 @@ We evaluate on three groups of test sets:
 ### 🀄 Mandarin CER (%)
 
 | Evaluation set | Qwen3-ASR | CN-MultiDialect-ASR |
-| -------------- | --------- | ------------------- |
+|:--------------:|:---------:|:-------------------:|
 | AISHELL-1      | 1.57      | **1.38**            |
 | AISHELL-2      | 2.79      | **2.52**            |
 | KeSpeech       | 5.11      | **4.56**            |
