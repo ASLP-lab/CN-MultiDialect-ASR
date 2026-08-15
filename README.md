@@ -2,7 +2,7 @@
   <img src="assets/logo.jpeg" width="520" alt="CN-MultiDialect-ASR logo">
 </p>
 
-# 🧠 On-Policy Self-Distillation for Multi-Dialect ASR: Mastering Dialects, Retaining Mandarin
+# <img src="assets/logo_zhong.png" alt="中" width="42" height="42"> On-Policy Self-Distillation for Multi-Dialect ASR: Mastering Dialects, Retaining Mandarin
 
 
 <div align="center">
@@ -172,7 +172,7 @@ MODEL=/path/to/sft/checkpoint DATA=/path/to/train.jsonl bash code/opsd.sh
 
 We evaluate on three groups of test sets:
 
-#### 🀄 Mandarin test sets
+#### 🇨🇳 Mandarin test sets
 
 `AISHELL-1`, `AISHELL-2`, `KeSpeech`, `SpeechIO-1`, `SpeechIO-2`, `SpeechIO-3`, `WenetSpeech Test_Meeting`, `WenetSpeech Test_Net`
 
@@ -186,7 +186,7 @@ We evaluate on three groups of test sets:
 
 ## 📈 Performances
 
-### 🧭 Dialect Overview
+### 📡 Dialect Overview
 
 <div align="center">
   <img src="assets/radar_1_cer_panels.png" alt="Side-by-side radar of 1-CER on public and internal dialect sets" width="92%">
@@ -228,7 +228,7 @@ We evaluate on three groups of test sets:
 | Xuzhou | 6.12 | **5.04** |
 | **Internal Avg.** | 21.01 | **12.42** |
 
-### 🀄 Mandarin CER (%)
+### 🇨🇳 Mandarin CER (%)
 
 | Evaluation set | Qwen3-ASR | CN-MultiDialect-ASR |
 |:--------------:|:---------:|:-------------------:|
@@ -271,7 +271,7 @@ If you use this work, please consider citing:
 }
 ```
 
-## 📄 Contact
+## ✉️ Contact
 
 For questions or collaborations, please contact [wangshuiyuan@mail.nwpu.edu.cn](mailto:wangshuiyuan@mail.nwpu.edu.cn).
 
