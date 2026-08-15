@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="assets/logo.jpeg" width="520" alt="CN-MultiDialect-ASR logo">
+</p>
 
 # 🧠 On-Policy Self-Distillation for Multi-Dialect ASR: Mastering Dialects, Retaining Mandarin
 
@@ -181,9 +184,9 @@ We evaluate on three groups of test sets:
 
 `Anhui`, `Cantonese`, `Changsha`, `Chaoshan`, `Dongbei`, `Henan`, `Kejia`, `Minnan`, `Nanchang`, `Nanjing`, `Shanxi`, `Shaanxi`, `Shandong`, `Shanghai`, `Sichuan`, `Suzhou`, `Wuhan`, `Xuzhou`
 
-## 📈 Main Results
+## 📈 Performances
 
-### 🧭 Dialect Results (1 − CER)
+### 🧭 Dialect Overview
 
 <div align="center">
   <img src="assets/radar_1_cer_panels.png" alt="Side-by-side radar of 1-CER on public and internal dialect sets" width="92%">
@@ -268,6 +271,13 @@ If you use this work, please consider citing:
 }
 ```
 
-## 📄 License
+## 📄 Contact
 
-The released model is licensed under [Apache 2.0](https://huggingface.co/ASLP-lab/CN-MultiDialect-ASR/).
+For questions or collaborations, please contact [wangshuiyuan@mail.nwpu.edu.cn](mailto:wangshuiyuan@mail.nwpu.edu.cn).
+
+You are also welcome to join our WeChat group for technical discussions and updates.
+<p align="center">
+  <img src="assets/wechat.jpg" width="300" alt="WeChat group QR code">
+  <br>
+  <em>Scan to join our WeChat discussion group</em>
+</p>
