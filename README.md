@@ -2,7 +2,16 @@
   <img src="assets/logo.jpeg" width="520" alt="CN-MultiDialect-ASR logo">
 </p>
 
-# <img src="assets/logo_zhong.png" alt="中" width="42" height="42"> On-Policy Self-Distillation for Multi-Dialect ASR: Mastering Dialects, Retaining Mandarin
+<table>
+  <tr>
+    <td valign="middle" width="110">
+      <img src="assets/logo_zhong.png" alt="中" width="96">
+    </td>
+    <td valign="middle">
+      <h1>On-Policy Self-Distillation for Multi-Dialect ASR: Mastering Dialects, Retaining Mandarin</h1>
+    </td>
+  </tr>
+</table>
 
 
 <div align="center">
